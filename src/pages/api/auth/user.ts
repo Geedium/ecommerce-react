@@ -4,7 +4,7 @@ import { ObjectId } from "mongodb";
 
 import jwt from "jsonwebtoken";
 
-import clientPromise from "@geedium/server/mongodb";
+import clientPromise from "@/util/mongodb";
 
 import type User from "../../../types/user";
 

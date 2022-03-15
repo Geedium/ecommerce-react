@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 import { ObjectId } from "mongodb";
 
-import clientPromise from "@geedium/server/mongodb";
+import clientPromise from "@/util/mongodb";
 
 const util = require("util");
 

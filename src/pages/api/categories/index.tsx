@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import clientPromise from "@geedium/server/mongodb";
+import clientPromise from "@/util/mongodb";
 
 import type Category from "../../../types/category";
 
