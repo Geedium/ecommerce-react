@@ -10,7 +10,9 @@ import axios from "axios";
 // writeFileSync(__dirname + '/data.log', JSON.stringify(process.env) );
 
 const getBaseURL = () => {
-  return typeof window === "undefined" ? `${process.env.BASE_URL}/api` : "/api";
+  return typeof window === "undefined"
+    ? `${process.env.NEXT_PUBLIC_API_HOST || process.env.VERCEL_URL}/api`
+    : "/api";
 };
 
 const API = axios.create({ baseURL: getBaseURL() });
