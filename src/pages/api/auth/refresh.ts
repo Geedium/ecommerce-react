@@ -6,9 +6,9 @@ import crypto from "crypto";
 
 import jwt from "jsonwebtoken";
 
-import clientPromise from "@geedium/server/mongodb";
+import clientPromise from "@/util/mongodb";
 
-import type { User } from "@geedium/server";
+import type User from "@/types/user";
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
   const { method } = req;

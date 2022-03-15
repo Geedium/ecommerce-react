@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 import { ObjectId } from "mongodb";
 import { NextApiRequest, NextApiResponse } from "next";
 
-import clientPromise from "@geedium/server/mongodb";
+import clientPromise from "@/util/mongodb";
 
 interface User {
   _id: string;

@@ -2,11 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@lib/*": ["lib/*"],
-      "@/lib/*": ["src/lib/*"],
       "@/components/*": ["src/components/*"],
       "@/types/*": ["src/types/*"],
-      "~/*": ["src/*"]
+      "@/util/*": ["src/util/*"]
     },
     "types": ["js-cookie", "@types/qs"]
   },

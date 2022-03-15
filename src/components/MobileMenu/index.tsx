@@ -15,7 +15,7 @@ import PropTypes from "prop-types";
 
 import type { SwipeableDrawerProps } from "@mui/material";
 
-import { iOS } from "@/lib/browser";
+import { iOS } from "../../lib/browser";
 
 import { selectCategories } from "../../store/slices/product";
 
