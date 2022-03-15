@@ -1,0 +1,42 @@
+.section {
+  position: relative;
+  padding-top: 112px;
+  padding-bottom: 112px;
+  display: "flex";
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.block {
+  display: block !important;
+  margin-top: 112px;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.expand {
+  flex: 1 1;
+}
+
+/* For 4K Displays (Ultra HD) */
+@media screen and (min-width: 3840px) {
+  .section:not(.expand) {
+    height: auto;
+    min-height: auto;
+  }
+}
+
+.one {
+  background: rgb(90, 90, 90);
+}
+
+.two {
+  background: #757575;
+}
+
+.end {
+  background: rgb(176, 176, 180);
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}

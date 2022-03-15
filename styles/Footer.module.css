@@ -1,0 +1,30 @@
+.footer {
+    position: relative;
+    margin-top: .2in;
+    user-select: none;
+    left:0;
+    bottom:0;
+    right:0;
+    padding: .2in;
+}
+
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav > a {
+    color: #F5DFBB;
+    display: block;
+}
+
+.nav > a:hover {
+    color: #F2542D;
+}
+
+.nav_h3 { 
+    color: white;
+    margin: 0;
+    padding: 0;
+}

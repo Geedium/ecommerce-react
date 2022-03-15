@@ -1,0 +1,457 @@
+.CookieConsent {
+  background: #000 !important;
+  opacity: 80% !important;
+  width: 435px !important;
+  bottom: 30px !important;
+  left: 30px !important;
+  position: fixed !important;
+  z-index: 30 !important;
+  padding: 14px !important;
+  max-width: calc(100% - 60px) !important;
+  flex-direction: column !important;
+}
+
+.CookieConsent div:first-child {
+  font-size: 14px !important;
+  line-height: 24px !important;
+  font-weight: 400 !important;
+  flex: 1 0 !important;
+  margin: 0 !important;
+}
+
+.CookieConsent #rcc-confirm-button {
+  background: none !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  line-height: 24px !important;
+  font-weight: 400 !important;
+  margin: 6px !important;
+  text-transform: uppercase !important;
+  text-decoration: underline !important;
+}
+
+.fab {
+  box-shadow: none !important;
+  background: none !important;
+  color: #fff !important;
+}
+
+.cart-paper {
+  width: 360px;
+  justify-content: center;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.aspect-\[2\/1\] {
+  aspect-ratio: 2/1;
+}
+
+/* Cart */
+.cart-wrap .information,
+.cart-wrap .buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-wrap-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-wrap-details {
+  display: flex;
+  flex-flow: column nowrap;
+  padding-left: 16px;
+}
+
+.cart-wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column nowrap;
+}
+
+.cart-wrap div {
+  flex: 1;
+}
+
+.cart-wrap img {
+  max-width: 80px;
+  object-fit: cover;
+}
+
+.each-slide > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 100%;
+}
+
+.each-slide span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
+
+a:hover,
+button:hover,
+button:hover > svg {
+  color: #a3a3a3 !important;
+}
+
+@import "react-slideshow-image/dist/styles.css";
+
+.MuiStepIcon-text {
+  color: #181818 !important;
+}
+
+.MuiFormControlLabel-label {
+  color: #fff !important;
+}
+
+.react-slideshow-container + ul.indicators {
+  gap: 1rem;
+}
+.react-slideshow-container + ul.indicators li {
+  width: 16px !important;
+  height: 16px !important;
+}
+.react-slideshow-container + ul.indicators .each-slideshow-indicator::before {
+  width: 16px !important;
+  height: 16px !important;
+}
+.react-slideshow-container .default-nav {
+  background: none !important;
+}
+
+.react-slideshow-container .default-nav:first-of-type {
+  left: 30px;
+  position: relative;
+}
+.react-slideshow-container .default-nav:last-of-type {
+  right: 30px;
+  position: relative;
+}
+
+.card-interact {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  box-shadow: 68px 0 18px 4px #5c5c5c;
+}
+
+.menu-button {
+  color: #fff !important;
+}
+
+.menu-button .MuiButton-endIcon {
+  transform: rotateZ(0deg);
+  transition: transform 0.5s;
+}
+
+.menu-button--active .MuiButton-endIcon {
+  transform: rotateZ(180deg);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+body,
+html,
+#__next {
+  height: 100%;
+}
+
+.link-titlea0 {
+  overflow: hidden;
+  text-decoration: none;
+  border: 0;
+  background: #27022d;
+}
+
+.linka0 .MuiCardContent-root::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  transform: skewX(-25deg);
+  transition: 1s;
+}
+
+.linka0:hover .MuiCardContent-root::before {
+  left: 100%;
+}
+
+.linka0 .link-titlea0 {
+  transition: transform 0.5s;
+}
+
+.linka0:hover .link-titlea2 {
+  opacity: 1;
+  height: auto;
+  width: auto;
+}
+
+.link-titlea2 {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  transition: all 2s;
+}
+
+.linka0:hover .link-titlea0 {
+  transform: translate(-50%, -30%);
+}
+
+.MuiMenuItem-root {
+  width: auto;
+}
+
+.menu .MuiPaper-root {
+  background: #181818;
+  border-radius: 0 !important;
+}
+
+.menu .MuiMenuItem-root:hover,
+.menu .MuiMenuItem-root:active,
+.menu .MuiMenuItem-root:active:hover {
+  background: none !important;
+  color: #a3a3a3 !important;
+}
+
+/* Swiper */
+
+.swiper-button-prev {
+  position: absolute;
+  left: 50% !important;
+  transform: translate(calc(-50% - 300px), 0);
+  outline-offset: 0.6rem;
+  outline: 0.15rem dashed rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  width: 48px !important;
+  height: 48px !important;
+  display: "flex" !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.swiper-button-next {
+  position: absolute;
+  right: 50% !important;
+  transform: translate(calc(-50% + 346px), 0);
+  outline-offset: 0.6rem;
+  outline: 0.15rem dashed rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  width: 48px !important;
+  height: 48px !important;
+  display: "flex" !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 24px !important;
+}
+
+.swiper {
+  width: 100%;
+  height: 600px;
+  background: #1f1f1f;
+  box-shadow: 1px 1px 2px #1f1f1f;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #fff !important;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 22px;
+  font-weight: bold;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.slider-image-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* slider-prev */
+
+.slider-triangle {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -30%;
+  z-index: 99;
+  opacity: 0;
+  transition: opacity 1s linear;
+}
+
+.slider-triangle > span {
+  width: 260px !important;
+  height: 350px !important;
+  position: relative !important;
+}
+
+.swiper-slide-active .slider-triangle {
+  opacity: 1;
+}
+
+.slider-triangle img {
+  outline-offset: none;
+  outline: none;
+  width: 260px !important;
+  height: 350px !important;
+  border-radius: 30rem;
+  object-fit: cover;
+  clip-path: polygon(
+    16.92% -3.9%,
+    80% -2.51%,
+    103.46% 18.89%,
+    101.92% 50%,
+    80.77% 50%,
+    0% 50%,
+    -2.69% 13.59%
+  );
+}
+
+/* Image wrapper */
+.swiper-slide-active .slider-image-wrapper span {
+  width: 364px !important;
+  height: 490px !important;
+  position: relative !important;
+}
+
+.swiper-slide-next .slider-image-wrapper {
+  position: relative;
+  left: -10%;
+  width: 260px;
+  height: 350px;
+  z-index: -1;
+}
+.swiper-slide-next .slider-image-wrapper span {
+  position: relative !important;
+  width: 260px !important;
+  height: 350px !important;
+}
+
+.swiper-slide-active .slider-image-wrapper span {
+  outline-offset: 0.6rem;
+  outline: 0.15rem solid rgba(255, 255, 255, 0.12);
+}
+
+.slider-image-wrapper span {
+  position: relative !important;
+  border-radius: 30rem;
+}
+
+.swiper-slide-next .slider-image-wrapper img {
+  outline-offset: none;
+  outline: none;
+  width: 260px !important;
+  height: 350px !important;
+}
+
+.slider-image::after {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  display: block;
+  content: "";
+  border-radius: 90px;
+}
+
+/* slider-prev */
+
+.slider-image-wrapper {
+  opacity: 0;
+  transition: opacity 1s linear;
+}
+
+.swiper-slide-next .slider-image-wrapper,
+.swiper-slide-active .slider-image-wrapper {
+  opacity: 1;
+}
+
+.collection {
+  opacity: 0;
+  transition: opacity 1s linear;
+  z-index: 99;
+}
+
+.swiper-slide-active .collection {
+  opacity: 1;
+}
+
+.swiper-slide-active .sliders-next,
+.swiper-slide-next .collection,
+.swiper-slide-prev .collection {
+  display: none;
+}
+
+.sliders-next {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  z-index: 99;
+}
+
+.parallax-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130%;
+  height: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}

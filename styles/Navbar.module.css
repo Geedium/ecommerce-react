@@ -1,0 +1,29 @@
+.icon {
+    display: inline-block;
+    position: relative;
+    line-height: 1;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.nav-link {
+    display: inline-block;
+    vertical-align: middle;
+    background: rgba(255, 255, 255, 0.321);
+    text-decoration: none;
+    padding: .75rem 1.5rem;
+    margin: .45rem;
+    border-radius: 9px;
+    position: relative;
+}
+
+.mat-nav-link:link, .mat-nav-link:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.67);
+    cursor: pointer;
+}

@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+    nginx:
+        image: nginx:latest
+        container_name: nginx
+        volumes:
+            - myapp:/home/node
+            - node_modules:/home/node/app/node_modules
+            - build:/home/node/app/build
+            - ./nginx.conf:/etc/nginx/nginx.conf
+        ports:
+            - 80:80
+    www:
+        container_name: www
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - myapp:/home/node
+            - node_modules:/home/node/app/node_modules
+            - build:/home/node/app/build
+            - ./:/home/node/app
+
+volumes:
+    node_modules:
+    build:
+    myapp:
+        

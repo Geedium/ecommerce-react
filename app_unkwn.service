@@ -1,0 +1,17 @@
+[Unit]
+Description=app
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/npm run start
+Restart=always
+RestartSec=500ms
+StartLimitInterval=0
+User=admin
+Group=admin
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/var/www/unknown.tld/apps/web
+
+[Install]
+WantedBy=multi-use.target
