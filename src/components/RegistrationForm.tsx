@@ -27,8 +27,8 @@ import {
   Email,
 } from "@mui/icons-material";
 
-import API from "~/actions";
-import { login } from "~/store/slices/auth";
+import API from "../actions";
+import { login } from "../store/slices/auth";
 
 import { useDispatch } from "react-redux";
 
