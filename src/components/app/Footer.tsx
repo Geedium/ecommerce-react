@@ -59,7 +59,10 @@ import { Email as EmailIcon } from "@mui/icons-material";
 
 import Socials from "@/components/app/Socials";
 
-import ReactStoreBadges from "react-store-badges";
+// import ReactStoreBadges from "react-store-badges";
+
+import googleBadge from "../../../public/img/fil_get.svg";
+import appleBadge from "../../../public/img/badge_appstore-lrg.svg";
 
 import Logo from "../Logo";
 
@@ -254,14 +257,14 @@ function Footer() {
                   width={135}
                   height={40}
                   alt="Get it on Google Play"
-                  src="/img/fil_get.svg"
+                  src={googleBadge.src}
                   loading="eager"
                 />
                 <Image
                   width={135}
                   height={40}
                   alt="Download on the App Store"
-                  src="/img/badge_appstore-lrg.svg"
+                  src={appleBadge.src}
                   loading="eager"
                 />
               </Box>

@@ -24,6 +24,8 @@ import { formatPrice } from "../../utils";
 
 import { addToCart } from "../../store/slices/cart";
 
+import AppImage from "@/components/app/AppImage";
+
 import { AddShoppingCart } from "@mui/icons-material";
 
 function ListItem({ product }: { product: any }) {
@@ -68,7 +70,7 @@ function ListItem({ product }: { product: any }) {
         <Box component={ImageMagnify} width={256} height={256}>
           <NextLink href={`/product/${product.slug}`} passHref>
             <Link style={{ textDecoration: "none" }}>
-              <Image layout="fill" src={product.image} />
+              <AppImage layout="fill" src={product.image} />
             </Link>
           </NextLink>
         </Box>

@@ -10,7 +10,10 @@ import clientPromise from "@/util/mongodb";
 
 import type User from "@/types/user";
 
-export default async function (req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const { method } = req;
 
   if (method != "POST") {

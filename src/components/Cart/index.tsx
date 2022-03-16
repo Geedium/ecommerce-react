@@ -20,6 +20,8 @@ import { t } from "../../providers/LocaleProvider";
 
 import type { DrawerProps } from "@mui/material";
 
+import Image from "next/image";
+
 import { ShoppingBag, Add, Remove } from "@mui/icons-material";
 
 import {
@@ -88,7 +90,13 @@ function Cart({ open, onClose }: CartProps): JSX.Element {
                 <React.Fragment key={index}>
                   <div className="cart-wrap">
                     <div className="cart-wrap-items">
-                      <img src={item.image} alt={item.name} />
+                      <Image
+                        width={80}
+                        height={80}
+                        placeholder="empty"
+                        src={item.image}
+                        alt={item.name}
+                      />
                       <div className="cart-wrap-details">
                         <Typography variant="subtitle1">{item.name}</Typography>
                         <Typography variant="subtitle2">

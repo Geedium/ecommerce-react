@@ -2,6 +2,8 @@ import * as React from "react";
 
 import { Paper, Box } from "@mui/material";
 
+import Image from "next/image";
+
 import styles from "./Card.module.css";
 
 type Props = {};
@@ -68,7 +70,7 @@ export default class Card extends React.Component<Props, State> {
     });
   };
 
-  render(): JSX.Element {
+  render() {
     const transitionStyles = {
       entering: styles.entering,
       entered: styles.entered,
@@ -99,11 +101,10 @@ export default class Card extends React.Component<Props, State> {
               ref={this.myRef}
               className={`${styles.cardItem} ${transitionStyles[state]}`}
             >
-              <img
-                style={{
-                  userSelect: "none",
-                  pointerEvents: "none",
-                }}
+              <Image
+                alt=""
+                width={400}
+                height={400}
                 src="https://source.unsplash.com/random"
               />
             </Paper>

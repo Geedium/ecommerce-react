@@ -25,6 +25,8 @@ import * as React from "react";
 
 import Section from "@/components/Section";
 
+import Image from "next/image";
+
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
@@ -152,7 +154,12 @@ const CheckoutPage: NextPage = () => {
                         <React.Fragment key={index}>
                           <div className="cart-wrap">
                             <div className="cart-wrap-items">
-                              <img src={item.image} alt={item.name} />
+                              <Image
+                                width={80}
+                                height={80}
+                                src={item.image}
+                                alt={item.name}
+                              />
                               <div className="cart-wrap-details">
                                 <Typography variant="subtitle1">
                                   {item.name}

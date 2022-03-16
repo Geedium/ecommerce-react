@@ -32,6 +32,7 @@ function Settings({ open, onClose }: SettingsProps): JSX.Element {
   const [state, setState] = useState(0);
 
   const router = useRouter();
+  const { locale, locales, defaultLocale } = router;
 
   useEffect(() => {
     if (locales && Array.isArray(locales)) {
@@ -41,9 +42,7 @@ function Settings({ open, onClose }: SettingsProps): JSX.Element {
         }
       }
     }
-  }, []);
-
-  const { locale, locales, defaultLocale } = router;
+  }, [locale, locales]);
 
   const currencies = [
     "United Arab Emirates Dirham (AED)",

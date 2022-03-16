@@ -26,6 +26,10 @@ import siteReducer from "./slices/site";
 
 import { axiosMiddleware } from "./axiosMiddleware";
 
+function parseBool(b) {
+  return !/^(false|0)$/i.test(b) && !!b;
+}
+
 const combinedReducers = combineReducers({
   product: productReducer,
   cart: cartReducer,
@@ -62,6 +66,7 @@ export const initStore = () =>
         )
         .concat(authMiddleware)
         .concat(axiosMiddleware),
+    devTools: !parseBool(process.env.prod),
   });
 
 export type AppStore = ReturnType<typeof initStore>;

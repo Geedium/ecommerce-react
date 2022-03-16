@@ -30,6 +30,14 @@
   text-decoration: underline !important;
 }
 
+.image {
+  visibility: hidden;
+}
+
+.lazy-image {
+  visibility: visible;
+}
+
 .fab {
   box-shadow: none !important;
   background: none !important;

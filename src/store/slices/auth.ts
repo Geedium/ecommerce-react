@@ -36,26 +36,26 @@ export const fetchUser = createAsyncThunk(
     const state = thunkApi.getState().auth;
 
     // Client side local storage pull
-    if (typeof window !== "undefined" && !state.accessToken) {
-      const auth: any = JSON.parse(localStorage.getItem("auth"));
+    // if (typeof window !== "undefined" && !state.accessToken) {
+    //   const auth: any = JSON.parse(localStorage.getItem("auth"));
 
-      console.log("Obtaining tokens: ", auth);
+    //   console.log("Obtaining tokens: ", auth);
 
-      const res = await axios.get("/auth/user", {
-        headers: {
-          // @ts-ignore
-          Authorization: `Bearer ${auth.accessToken}`,
-        },
-      });
+    //   const res = await axios.get("/auth/user", {
+    //     headers: {
+    //       // @ts-ignore
+    //       Authorization: `Bearer ${auth.accessToken}`,
+    //     },
+    //   });
 
-      console.log("Fetched user data after cold start: ", res.data);
+    //   console.log("Fetched user data after cold start: ", res.data);
 
-      return {
-        user: res.data,
-        accessToken: auth.accessToken,
-        refreshToken: auth.refreshToken,
-      };
-    }
+    //   return {
+    //     user: res.data,
+    //     accessToken: auth.accessToken,
+    //     refreshToken: auth.refreshToken,
+    //   };
+    // }
 
     try {
       const res = await axios.get("/auth/user", {
@@ -94,14 +94,14 @@ export const login = createAsyncThunk(
       const res = await axios.post("/auth/login", qs.stringify(credentials));
       const data = res.data;
 
-      console.log("Logged in with data of ", data);
+      // console.log("Logged in with data of ", data);
 
       if (data.access_token) {
         const refetch = await axios.get("/auth/user", {
           headers: { Authorization: `Bearer ${data.access_token}` },
         });
 
-        console.log("Refetch: ", refetch.data);
+        // console.log("Refetch: ", refetch.data);
 
         // Client side local storage pull
         // if (typeof window !== "undefined") {
@@ -203,12 +203,12 @@ export const AuthSlice = createSlice({
       state.loggedIn = true;
     });
     builder.addCase(login.rejected, (state, action) => {
-      console.log("action=>", action);
+      // console.log("action=>", action);
       state = Object.assign(Object.assign({}, initialState), {
         // @ts-ignore
         errorMsg: action.payload.errorMsg,
       });
-      console.log("state=>", state);
+      // console.log("state=>", state);
     });
     builder.addCase(fetchUser.fulfilled, (state, action) => {
       // @ts-ignore

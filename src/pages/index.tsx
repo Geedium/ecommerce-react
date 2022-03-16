@@ -6,32 +6,19 @@ import {
   Typography,
   Container,
   Card,
-  CardActions,
   CardContent,
   Box,
   Paper,
-  Divider,
   useMediaQuery,
   useTheme,
-  NoSsr,
+  CircularProgress,
 } from "@mui/material";
-
-import { motion, useViewportScroll, useTransform } from "framer-motion";
 
 // Import Swiper React components
 import { Swiper, SwiperProps, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper";
 
-import {
-  EffectCreative,
-  EffectCoverflow,
-  Navigation,
-  Pagination,
-  Parallax,
-  Lazy,
-} from "swiper";
-
-import Collection from "../components/Collection";
+import { EffectCoverflow, Navigation, Lazy } from "swiper";
 
 import { fetchUser } from "../store/slices/auth";
 
@@ -39,12 +26,11 @@ import { fetchUser } from "../store/slices/auth";
 import Image from "next/image";
 import NextLink from "next/link";
 
+import AppImage from "@/components/app/AppImage";
+
 // Material-UI components
-import Fab from "@mui/material/Fab";
-import Rating from "@mui/material/Rating";
 
 // Material-UI icons
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 import Stack from "@mui/material/Stack";
 
@@ -56,30 +42,23 @@ import {
   selectProducts,
   selectCategories,
 } from "../store/slices/product";
-import { getFeaturedProducts } from "../actions";
 
 import { addToCart } from "../store/slices/cart";
 
 // Routing
 import Link from "@mui/material/Link";
 
-import Footer from "@/components/app/Footer";
-
 import React, { RefAttributes } from "react";
 
 // import { Slide } from "react-slideshow-image";
 
-import SnapContainer from "../components/SnapContainer";
 import Section from "../components/Section";
-
-import StoreLayout from "../layouts/StoreLayout";
 
 import API from "../actions";
 
 import ImageMagnify from "../components/ImageMagnify";
 
 // App
-import { formatPrice } from "../../lib/utils";
 
 // interface Props {
 //   categories?: any[];
@@ -103,6 +82,7 @@ function Slide({ current, description, active, next }) {
         className="slider-triangle"
       >
         <Image
+          alt=""
           layout="fill"
           objectFit="cover"
           className="slider-image"
@@ -141,6 +121,7 @@ function Slide({ current, description, active, next }) {
         >
           <ImageMagnify height={490}>
             <Image
+              alt=""
               layout="fill"
               className="slider-image"
               objectFit="cover"
@@ -193,6 +174,8 @@ function Slide({ current, description, active, next }) {
 }
 
 const HomePage: NextPage = () => {
+  const [imageIsLoaded, setImageIsLoaded] = React.useState(false);
+
   const products = useSelector(selectProducts);
 
   const categories = useSelector(selectCategories);
@@ -345,14 +328,7 @@ const HomePage: NextPage = () => {
                                   position: "relative",
                                 }}
                               >
-                                <Image
-                                  layout="fill"
-                                  objectFit="cover"
-                                  src={category.thumbnail}
-                                  quality={100}
-                                  placeholder="blur"
-                                  blurDataURL="https://dri.es/files/images/blog/lazy-loading-images-placeholder-1.jpg"
-                                />
+                                <AppImage src={category.thumbnail} />
                               </Box>
                             )}
                             <Paper
