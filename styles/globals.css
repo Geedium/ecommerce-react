@@ -463,3 +463,8 @@ html,
   background-size: cover;
   background-position: center;
 }
+
+.is-centered {
+  display: grid;
+  place-items: center;
+}

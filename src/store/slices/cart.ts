@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { stat } from "fs/promises";
 import { AppState } from "..";
 
 /**
@@ -16,12 +15,14 @@ import { HYDRATE } from "next-redux-wrapper";
 
 import type Product from "../../types/product";
 
+const initialState = {
+  items: [],
+  updated: false,
+};
+
 export const CartSlice = createSlice({
   name: "cart",
-  initialState: {
-    items: [],
-    updated: false,
-  },
+  initialState,
   reducers: {
     discardFromCart: (
       state,
@@ -57,6 +58,9 @@ export const CartSlice = createSlice({
       // apply changes to original array
       state.items = items;
     },
+    clearCart: (state, action) => {
+      state = initialState;
+    },
     onCartView: (state, _) => {
       state.updated = false;
     },
@@ -88,7 +92,8 @@ export const CartSlice = createSlice({
   },
 });
 
-export const { addToCart, discardFromCart, onCartView } = CartSlice.actions;
+export const { addToCart, discardFromCart, onCartView, clearCart } =
+  CartSlice.actions;
 
 export const selectItems = (state: AppState) => state.cart?.items;
 

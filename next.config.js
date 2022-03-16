@@ -10,7 +10,8 @@ module.exports = {
   env: {
     S3_UPLOAD_BUCKET: process.env.S3_UPLOAD_BUCKET,
     S3_UPLOAD_REGION: process.env.S3_UPLOAD_REGION,
-    prod: process.env.NODE_ENV === 'production'
+    prod: process.env.NODE_ENV === "production",
+    STRIPE_PUBLISHABLE_KEY: process.env.STRIPE_PUBLISHABLE_KEY,
   },
   images: {
     formats: ["image/avif", "image/webp"],

@@ -8,7 +8,7 @@
  * to build your design system and develop
  * React applications faster.
  */
-import { Stack, IconButton, Divider } from "@mui/material";
+import { Stack, IconButton, Divider, Input, InputLabel } from "@mui/material";
 
 /**
  * @mui/icons-material
@@ -34,16 +34,32 @@ import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-import { Container } from "@mui/material";
+import {
+  Container,
+  FormControl,
+  FormLabel,
+  RadioGroup,
+  FormControlLabel,
+  Radio,
+  TextField,
+} from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { selectItems, addToCart, discardFromCart } from "../store/slices/cart";
+import {
+  selectItems,
+  addToCart,
+  discardFromCart,
+} from "../../store/slices/cart";
 
-import { wrapper } from "../store";
+import { wrapper } from "../../store";
 
-import API from "../actions";
+import API from "../../actions";
 
-import { formatPrice } from "../utils";
-import Product from "../types/product";
+import StripeCheckoutForm from "@/components/shop/StripeCheckoutForm";
+
+import { formatPrice } from "../../utils";
+import Product from "../../types/product";
+
+import { useTheme } from "@mui/material/styles";
 
 const steps = [
   "Review Your Order",
@@ -58,6 +74,8 @@ const CheckoutPage: NextPage = () => {
   const dispatch = useDispatch();
 
   const cart = useSelector(selectItems);
+
+  const theme = useTheme();
 
   const addItemToCart = (item) => {
     dispatch(addToCart(item));
@@ -212,6 +230,27 @@ const CheckoutPage: NextPage = () => {
                       );
                     })}
                   </div>
+                ) : activeStep + 1 === 3 ? (
+                  <Box sx={{ display: "flex", flexDirection: "column" }}>
+                    <FormControl>
+                      <FormLabel id="demo-radio-buttons-group-label">
+                        Select a desired payment method for your purchase:
+                      </FormLabel>
+                      <RadioGroup
+                        aria-labelledby="demo-radio-buttons-group-label"
+                        defaultValue="stripe"
+                        name="radio-buttons-group"
+                      >
+                        <FormControlLabel
+                          value="stripe"
+                          control={<Radio />}
+                          label="Stripe"
+                          disabled
+                        />
+                      </RadioGroup>
+                    </FormControl>
+                    <StripeCheckoutForm />
+                  </Box>
                 ) : (
                   <div> Step {activeStep + 1}</div>
                 )}

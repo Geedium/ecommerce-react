@@ -17,6 +17,9 @@ import Layout from "../components/Layout";
 
 import API from "../actions";
 
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+
 import { LocaleProvider } from "../providers/LocaleProvider";
 
 import "react-slideshow-image/dist/styles.css";
@@ -31,6 +34,8 @@ import App, { AppProps } from "next/app";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
+
+const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY);
 
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
@@ -49,7 +54,9 @@ function MyApp(props: MyAppProps) {
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <Layout>
-            <Component {...pageProps} />
+            <Elements stripe={stripePromise}>
+              <Component {...pageProps} />
+            </Elements>
           </Layout>
         </LocaleProvider>
       </ThemeProvider>
