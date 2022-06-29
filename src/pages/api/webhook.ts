@@ -14,7 +14,7 @@ export default async function handler(
 ) {
   const rawBody = await getRawBody(req);
 
-  const endpointSecret = "whsec_tUZVWpj5z9Q9R9jgtVD2hRt9cQa66qv7";
+  const endpointSecret = process.env.WEBHOOK_SECRET_STRIPE;
   const signature = req.headers["stripe-signature"] ?? "";
 
   try {
